@@ -29,9 +29,17 @@ const app = props => {
       <h1>Hi, I'm a React App</h1>
       <p>This is really working</p>
       <button onClick={switchNameHandler} >Switch name</button>
-      <Person name={personsState.persons[0].name} age={personsState.persons[0].age} >My hobbies: Soccer</Person>
-      <Person name={personsState.persons[1].name} age={personsState.persons[1].age} />
-      <Person name={personsState.persons[2].name} age={personsState.persons[2].age} />
+      <Person 
+      name={personsState.persons[0].name} 
+      age={personsState.persons[0].age} 
+      click={switchNameHandler}
+      >My hobbies: Soccer</Person>
+      <Person 
+      name={personsState.persons[1].name} 
+      age={personsState.persons[1].age} />
+      <Person 
+      name={personsState.persons[2].name} 
+      age={personsState.persons[2].age} />
       {/* <Person name='Martin' age='30'>My hobbies: Soccer</Person>
       <Person name='Daniel' age='29' />
       <Person name='Sabrina' age='27' /> */}
