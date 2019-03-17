@@ -9,9 +9,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is really working</p>
-        <Person />
-        <Person />
-        <Person />
+        <Person name='Martin' age='30' />
+        <Person name='Daniel' age='29' />
+        <Person name='Sabrina' age='27' />
       </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now'));
