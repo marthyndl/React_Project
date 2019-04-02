@@ -48,6 +48,30 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer'
     };
+
+    let persons = null;
+
+    if (this.state.showPersons) {
+      persons = (
+        <div>          
+          <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age} 
+          click={this.switchNameHandler.bind(this, 'Martin')}
+          >My hobbies: Soccer</Person>
+          <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age} 
+          change={this.nameChangeHandler}/>
+          <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age} />
+          {/* <Person name='Martin' age='30'>My hobbies: Soccer</Person>
+          <Person name='Daniel' age='29' />
+          <Person name='Sabrina' age='27' /> */}
+        </div>
+      );
+    }
     
     return (
       <div className="App">
@@ -55,27 +79,8 @@ class App extends Component {
         <p>This is really working</p>
         <button 
         style={style}
-        onClick={this.togglePersonsHandler} >Switch name</button>
-        { 
-          this.state.showPersons === true ?           
-            <div>          
-              <Person 
-              name={this.state.persons[0].name} 
-              age={this.state.persons[0].age} 
-              click={this.switchNameHandler.bind(this, 'Martin')}
-              >My hobbies: Soccer</Person>
-              <Person 
-              name={this.state.persons[1].name} 
-              age={this.state.persons[1].age} 
-              change={this.nameChangeHandler}/>
-              <Person 
-              name={this.state.persons[2].name} 
-              age={this.state.persons[2].age} />
-              {/* <Person name='Martin' age='30'>My hobbies: Soccer</Person>
-              <Person name='Daniel' age='29' />
-              <Person name='Sabrina' age='27' /> */}
-            </div> : null
-        }
+        onClick={this.togglePersonsHandler} >Switch name</button>           
+          {persons}
       </div>
     )
   }
